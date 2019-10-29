@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="medium-container">
-    <h1>Search Github</h1>
+  <div id="app" class="container">
+    <h1>Search Github Users by Name</h1>
 
     <search-form @search:records="search" />
     <search-results :records="records" :search-val="searchVal" :page="page" :per-page="perpage" />
@@ -27,6 +27,7 @@ export default {
     };
   },
   methods: {
+    /* GET request to Github users earch */
     async search(searchVal) {
       try {
         const response = await fetch(
